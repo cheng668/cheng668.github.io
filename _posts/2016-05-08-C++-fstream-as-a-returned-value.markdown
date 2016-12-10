@@ -1,7 +1,7 @@
 ---
 layout: post
 title:  "C++ fstream as a returned value!"
-date:   2016-06-08 15:14:54
+date:   2016-05-08 11:14:54
 categories: C++
 tags: C++
 excerpt: fstream引用作为函数返回值问题
