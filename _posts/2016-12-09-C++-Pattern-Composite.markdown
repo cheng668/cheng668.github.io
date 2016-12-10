@@ -7,7 +7,7 @@ tags: Pattern
 excerpt: C++设计模式之组合模式
 ---
 
-![github](https://github.com/cheng668/image/blob/master/%E7%BB%84%E5%90%88%E6%A8%A1%E5%BC%8F.png) 
+![github](https://raw.githubusercontent.com/cheng668/image/master/%E7%BB%84%E5%90%88%E6%A8%A1%E5%BC%8F.png) 
 
 ## 一.意图：
   

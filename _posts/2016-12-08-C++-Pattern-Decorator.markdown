@@ -7,7 +7,7 @@ tags: Pattern
 excerpt: C++设计模式之装饰模式
 ---
 
-![Image](https://github.com/cheng668/image/blob/master/%E8%A3%85%E9%A5%B0%E6%A8%A1%E5%BC%8F.png)
+![](https://raw.githubusercontent.com/cheng668/image/master/%E8%A3%85%E9%A5%B0%E6%A8%A1%E5%BC%8F.png)
 
 ## 一.意图：
 

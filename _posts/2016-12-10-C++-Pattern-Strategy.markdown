@@ -7,7 +7,7 @@ tags: Pattern
 excerpt: C++设计模式之策略模式
 ---
 
-![Image](https://github.com/cheng668/image/blob/master/%E7%AD%96%E7%95%A5%E6%A8%A1%E5%BC%8F.png)
+![Image](https://raw.githubusercontent.com/cheng668/image/master/%E7%AD%96%E7%95%A5%E6%A8%A1%E5%BC%8F.png)
 
 ## 一、意图：
 
