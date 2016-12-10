@@ -3,7 +3,7 @@ layout: post
 title:  "C++ Pattern-Strategy!"
 date:   2016-12-10 10:55:46
 categories: C++
-tags: C++
+tags: Pattern
 excerpt: C++设计模式之策略模式
 ---
 

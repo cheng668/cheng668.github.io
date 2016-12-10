@@ -3,7 +3,7 @@ layout: post
 title:  "C++ Pattern-Composite!"
 date:   2016-12-09 15:23:12
 categories: C++
-tags: C++
+tags: Pattern
 excerpt: C++设计模式之组合模式
 ---
 

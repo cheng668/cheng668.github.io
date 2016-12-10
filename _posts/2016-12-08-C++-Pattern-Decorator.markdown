@@ -3,7 +3,7 @@ layout: post
 title:  "C++ Pattern-Decorator!"
 date:   2016-12-08 12:01:54
 categories: C++
-tags: C++
+tags: Pattern
 excerpt: C++设计模式之装饰模式
 ---
 
