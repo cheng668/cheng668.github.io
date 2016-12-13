@@ -1,11 +1,14 @@
 ---
 layout: post
-title:  "C++ fstream as a returned value!"
+title:  "C++ fstream as a returned value"
 date:   2016-05-08 11:14:54
 categories: C++
 tags: C++
 excerpt: fstream引用作为函数返回值问题
 ---
+
+* content
+{:toc}
 
 * 以`ofstream`的引用和一个销售数据类的引用作为入参，函数中返回输出数据后的流引用，以下是我代码：
 
