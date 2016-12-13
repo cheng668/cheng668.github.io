@@ -1,7 +1,7 @@
 ---
 layout: post
 title:  "C++ Pattern-AstractFactory!"
-date:   2016-12-13 11:14:00
+date:   2016-12-12 11:14:00
 categories: C++
 tags: Pattern
 excerpt: C++设计模式之抽象工厂模式
@@ -24,13 +24,17 @@ excerpt: C++设计模式之抽象工厂模式
 
 ### AbstractFactory(WidgetFactory)
 * 声明一个创建抽象产品对象的操作接口。
+
 ### ConcreteFactory(MotifWidgetFactory,PMWidgetFactory)
 * 实现创建具体产品对象的操作。
+
 ### AbstractProduct(Windows,ScrollBar)
 * 为一类产品对象声明一个接口。
+
 ### ConcreteProduct(MotifWindow,MotifScrollBar)
 * 定义一个将被相应的具体工厂创建的产品对象
 * 事项AbstractProduct接口
+
 ### Client
 * 仅使用由AbstractFactory和AbstractProduct类声明的接口
 
@@ -45,6 +49,7 @@ excerpt: C++设计模式之抽象工厂模式
 * 分离客户与产品的类
 * 一个应用中仅有一次创建具体工厂类的地方，便于交换产品系列
 * 利于产品一致性
+
 ### 缺点：
 * 难以支持新种类的产品
 
