@@ -99,6 +99,7 @@ void nonrsrlek()
 
 * `ON_SCOPE_EXIT`是`ScopeGuard xxx（callback）`的宏定义，而为了为`ScopeGuard ` 对象起不重复的名字，这里用了`SCOPEGUARD_LINENAME` 这个宏实现把行号混入变量名xxx,实际上`ScopeGuard ` 这个类才是类资源管理的类，其实现如下：
 
+
 ```
 class ScopeGuard
 {
