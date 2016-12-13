@@ -35,6 +35,7 @@ excerpt: C++设计模式之抽象工厂模式
 * 仅使用由AbstractFactory和AbstractProduct类声明的接口
 
 ##四.协作：
+
 * 运行时创建一个ConcreteFactory类的实例，具体工厂对应不同产品对象。
 * AbstractFactory将产品对象的创建延迟到ConcreteFactory子类。
 
@@ -58,6 +59,7 @@ excerpt: C++设计模式之抽象工厂模式
 * ET++使用AbstracFactory模式以打到在不同窗口系统（X Windows和SunView）间的可移植性。
 
 ## 八.相关模式：
+
 * AbstractFactory类通常用工厂方法（Factory Method）实现，但它们也可以用Prototype实现。
 * 一个具体工厂通常时一个单件（Singleton）。
 
