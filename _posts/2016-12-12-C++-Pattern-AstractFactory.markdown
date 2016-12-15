@@ -73,4 +73,4 @@ excerpt: C++设计模式之抽象工厂模式
 
 ### 九.源码例子：
 
-**[抽象工厂模式源码例子](https://github.com/cheng668/Pattern-AstractFactory)**
+**[抽象工厂模式源码例子 🇨🇳](https://github.com/cheng668/Pattern-AstractFactory)**
