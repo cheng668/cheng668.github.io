@@ -84,3 +84,5 @@ tags: Pattern
 * Composite通常用Builder生成
 
 ### 九.代码：
+
+**[建造者模式源码例子 🇨🇳](https://github.com/cheng668/Pattern-Builder/tree/master)**
