@@ -21,22 +21,22 @@ OpenSSL 是一个安全套接字层密码库，囊括主要的密码算法、常
 
 #### 系统环境配置
 下载完成后编译（或者安装）得到OpenSSL-Win32文件夹，于是打开“环境变量”，按“添加”按钮，根据自己的安装路径添加一条变量，博主安装在D:\目录下，所以添加变量值为D:\OpenSSL-Win32，变量名为OPENSSL_DIR或者根据自己需要填写：
-![]()
+![](https://raw.githubusercontent.com/cheng668/cheng668.github.io/master/image/opensslConfig/%E6%B7%BB%E5%8A%A0%E7%B3%BB%E7%BB%9F%E7%8E%AF%E5%A2%83%E5%8F%98%E9%87%8F.png)
 
 #### 附加包含目录
 接着打开你要用到openssl库的工程，博主的是自己的编写的SQLiteStudio工具[代码](https://github.com/cheng668/QT-SQLiteStudio)的工程，右击选择“属性”：
-![]()
+![](https://raw.githubusercontent.com/cheng668/cheng668.github.io/master/image/opensslConfig/%E9%80%89%E6%8B%A9%E9%A1%B9%E7%9B%AE%E5%B1%9E%E6%80%A7.png)
 
 在“配置属性”-“C/C++”-“常规”的“附加包含目录”中添加`$(OPENSSL_DIR)\include`，其中，`OPENSSL_DIR`就是之前配置环境变量的变量名，`$(OPENSSL_DIR)\include`会用变量值翻译过来变为`D:\OpenSSL-Win32\include`:
-![]()
+![](https://raw.githubusercontent.com/cheng668/cheng668.github.io/master/image/opensslConfig/%E9%99%84%E5%8A%A0%E5%8C%85%E5%90%AB%E7%9B%AE%E5%BD%95.png)
 
 #### 附加库目录
 同理，在“配置属性”-“链接器”-“常规”的“附加库目录”中添加`$(OPENSSL_DIR)\lib`：
-![]()
+![](https://raw.githubusercontent.com/cheng668/cheng668.github.io/master/image/opensslConfig/%E9%99%84%E5%8A%A0%E5%BA%93%E7%9B%AE%E5%BD%95.png)
 
 #### 附加依赖项
 在“配置属性”-“链接器”-“输入”的“附加依赖项”中添加“libssl.lib”、“libcrypto.lib”两项，其中此两项按照版本的不同而不同，博主用的是1_1_0c：
-![]()
+![](https://raw.githubusercontent.com/cheng668/cheng668.github.io/master/image/opensslConfig/%E6%B7%BB%E5%8A%A0%E4%BE%9D%E8%B5%96%E9%A1%B9.png)
 
 #### 最后
 最后，重启IDE，如果需要在QT上使用DES算法，请看博主文章；或想进一步指导OPENSSL算法的使用，可以[点我](https://www.openssl.org/docs/man1.1.0/)
