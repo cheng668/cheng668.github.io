@@ -149,6 +149,7 @@ CT2[64] = {
 	34, 2, 42, 10, 50, 18, 58, 26,
 	33, 1, 41, 9, 49, 17, 57, 25 };
 ```
+
 ### 二、代码实现
 
 #### 相关函数简介
@@ -403,10 +404,12 @@ void SFunc(bool* CL/*32bits*/, bool* CR/*32bits*/, const DES_KEY key/*16*48bits*
 
 * 从char数组和bit数组转换时注意转移顺序
 如char数组是`10000111 00010001`按照转换成bit数组的话：
+
 ```c
 	for (size_t i = 0; i < outlenght; i++)
 		out[i] = (in[i / 8] >> (7-(i % 8))) & 1;
 ```
+
 得到bit数组:`10000111 00010001`
 而如果按照：
 
@@ -414,6 +417,7 @@ void SFunc(bool* CL/*32bits*/, bool* CR/*32bits*/, const DES_KEY key/*16*48bits*
 	for (size_t i = 0; i < outlenght; i++)
 		out[i] = (in[i / 8] >> (i % 8)) & 1;
 ```
+
 会得到bit数组为`11100001 10001000`
 
 * 测试代码
