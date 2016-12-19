@@ -41,8 +41,6 @@ kramdown:
   input: GFM
   syntax_highlighter: rouge
 
-# port
-port: 5001
 
 # url
 category_dir: category/
