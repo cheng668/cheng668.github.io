@@ -21,22 +21,22 @@ excerpt: C++设计模式之组合模式
 
 ### 三.参与者：
   
-#### Component(Equipment):
+#### Component(Equipment)
 * 为组合中对象声明接口；
 * 实现所有类共有接口的缺省行为；
 * 声明一个接口用于访问和管理Component的子组件；
 * （可选）在递归结构中定义一个接口，用于访问一个父不见，并在合适情况下实现它
 
-#### Leaf(FloppyDisk):
+#### Leaf(FloppyDisk)
 * 在组合中表示叶节点，没子节点；
 * 在组合中定义图元对象的行为
 
-#### Composite(CompositeEquipment,Chassis):
+#### Composite(CompositeEquipment ,Chassis)
 * 定义有子部件的那些部件的行为；
 * 存储子部件；
 * 在Component接口中实现与子部件有关的操作
 
-#### Client:
+#### Client
 * 通过Component接口操纵组合部件的对象
 
 ### 四.协作：  

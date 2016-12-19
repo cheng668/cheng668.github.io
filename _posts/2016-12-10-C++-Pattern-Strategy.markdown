@@ -28,7 +28,8 @@ excerpt: C++设计模式之策略模式
 #### 1.Strategy(策略接口，Compositor)
 * 定义所有支持的算法的公共接口
 
-#### 2.ConcreteStrategy(具体策略，SimpleCompositor,TeXCompositor,ArrayCompositor)
+#### 2.ConcreteStrategy(具体策略，SimpleCompositor,
+TeXCompositor, ArrayCompositor)
 * 以Strategy接口实现某具体算法
 
 #### 3.Comtext(上下文，Composition)
