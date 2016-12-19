@@ -31,7 +31,7 @@ excerpt: C++设计模式之组合模式
 * 在组合中表示叶节点，没子节点；
 * 在组合中定义图元对象的行为
 
-#### Composite(CompositeEquipment ,Chassis)
+#### Composite( CompositeEquipment ,Chassis)
 * 定义有子部件的那些部件的行为；
 * 存储子部件；
 * 在Component接口中实现与子部件有关的操作

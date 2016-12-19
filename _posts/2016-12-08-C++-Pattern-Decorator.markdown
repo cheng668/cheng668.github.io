@@ -31,8 +31,7 @@ excerpt: C++设计模式之装饰模式
 #### Decorator:
 * 维持一个指向Component对象的指针，并定义一个与Component接口一致的接口
 
-#### ConcreteDecorator
-(BorderDecorator,ScrollDecorator)
+#### ConcreteDecorator( BorderDecorator, ScrollDecorator)
 * 向组件添加职责
 
 ### 四.协作：

@@ -28,13 +28,13 @@ excerpt: C++设计模式之抽象工厂模式
 #### AbstractFactory(WidgetFactory)
 * 声明一个创建抽象产品对象的操作接口。
 
-#### ConcreteFactory(MotifWidgetFactory,PMWidgetFactory)
+#### ConcreteFactory( MotifWidgetFactory, PMWidgetFactory)
 * 实现创建具体产品对象的操作。
 
-#### AbstractProduct(Windows,ScrollBar)
+#### AbstractProduct( Windows, ScrollBar)
 * 为一类产品对象声明一个接口。
 
-#### ConcreteProduct(MotifWindow,MotifScrollBar)
+#### ConcreteProduct( MotifWindow, MotifScrollBar)
 * 定义一个将被相应的具体工厂创建的产品对象
 * 事项AbstractProduct接口
 
