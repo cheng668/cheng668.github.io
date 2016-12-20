@@ -75,7 +75,7 @@ typedef struct DES_ks {
 void DES_set_key_unchecked(const_DES_cblock *key, DES_key_schedule *schedule);
 ```
 
-这里只要根据类型别名对号入座就像，如用`keySchedule`存放处理后的密钥：
+这里只要根据类型别名对号入座就行，如用`keySchedule`存放处理后的密钥：
 
 ```c
 DES_key_schedule keySchedule;
@@ -146,9 +146,9 @@ if (cleartext.length() % 8 != 0) {
 
 #### 对密文类型转换
 
-将密文保存在`Ciphertext`内后，要注意从string转换为QString，因为string相当于char字符数组,而char常用Ascii编码，`QString::fromStdString()`函数默认把0-127的字符转换为Unicode 编码，这时如果string里面存的字符不是0-127的话，转换会出现差错，这里可能有点难懂，举个例子：
+将密文保存在`Ciphertext`内后，要注意从string转换为QString，因为string相当于char字符数组,而char常用Ascii编码，`QString::fromStdString()`函数会把0-127的字符转换为Unicode 编码，这时如果string里面存的字符不是0-127的话，转换会出现差错，这里可能有点难懂，举个例子：
 
-原本`outputText`中第一个字符的2进制数为`10000001`,即129，对于大于127的字符，`QString::fromStdString()`函数会翻译成65533，这样就出错了。
+原本`outputText`中第一个字符的2进制数为`10000001`,即129，对于这里大于127的字符，`QString::fromStdString()`函数会翻译成65533，这样就出错了。
 
 所以这里应该用`QString::fromLatin1()`函数进行转换，这时会把129（无符号）或者-127（有符号）都作为无符号的129，即：
 
@@ -157,7 +157,7 @@ ciphertext.clear();
 ciphertext = QString::fromLatin1(Ciphertext.c_str(), Ciphertext.length());
 ```
 
-这里还要注意string的转化过程中，QString会识别`\0`空字符，当解密后字符串中（如`Ciphertext[2] = '\0'`）那么转换为QString就会只剩下`Ciphertext[0]`和`Ciphertext[1]`了，显然是不符合的。
+这里还要注意string的转化过程中，QString会识别`\0`空字符，当解密后字符串中，如在得到的`Ciphertext`8字节字符串中，`Ciphertext[2] = '\0'`，那么转换为QString就会只剩下`Ciphertext[0]`和`Ciphertext[1]`了，显然是不符合的。
 所以`QString::fromLatin1`中第二个参数必须指定为`Ciphertext`的长度。
 
 ### 五、完整加密解密代码
@@ -165,4 +165,10 @@ ciphertext = QString::fromLatin1(Ciphertext.c_str(), Ciphertext.length());
 **[ECB加密代码](https://github.com/cheng668/QT-SQLiteStudio/blob/master/ecbcipher.cpp)** 
 
 解密过程和加密类似，这里不再累赘，但要注意以下一点：
-* 当调用`QString::fromLatin1()`从string密文向明文QString转换时，第二个参数不要填，至于原因，给读者一个小小的思考空间！！！（答案见）**[ECB加密代码](https://github.com/cheng668/QT-SQLiteStudio/blob/master/ecbcipher.cpp)** 
+* 当调用`QString::fromLatin1()`从string密文向明文QString转换时，第二个参数不要填，原因是解密后得到的明文以每8字节保存在`Ciphertext`(假设是`Ciphertext`,也可以为`Cleartext`,自定义)中，不足8字节的会用'\0'补齐，如果这时用
+
+```c
+	ciphertext = QString::fromLatin1(Ciphertext.c_str(), Ciphertext.length());
+```
+
+进行转换的话，QString会把`\0`带上，造成不必要的错误。
