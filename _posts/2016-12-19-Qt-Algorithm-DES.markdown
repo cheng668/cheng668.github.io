@@ -31,6 +31,56 @@ QT并没有自带的加解密工具，网上有用Qt开源加解密插件，有�
 
 本文只介绍ECB的用法。
 
+### 先贴出加密代码
+
+```c++
+CRYPTO_STATUS ECBCipher::DES_Encrypt(const QString cleartext, const QString key, QString& ciphertext)
+{
+	if (cleartext.isEmpty())
+	{
+		return ENCRYPT_SUCCESS;
+	}
+	DES_cblock keyEncrypt;
+	memset(keyEncrypt, 0, 8);
+	const char* ch = key.toLatin1().data();
+	if (key.length() <= 8)
+		memcpy(keyEncrypt, key.toLatin1().data(), key.length());
+	else
+		memcpy(keyEncrypt, key.toLatin1().data(), 8);
+
+	DES_key_schedule keySchedule;
+	DES_set_key_unchecked(&keyEncrypt, &keySchedule);
+
+	const_DES_cblock inputText;
+	DES_cblock outputText;
+	string Ciphertext;
+
+	for (int i = 0; i < cleartext.length() / 8; i++) {
+		memcpy(inputText, cleartext.toLatin1().data() + i * 8, 8);
+		DES_ecb_encrypt(&inputText, &outputText, &keySchedule, DES_ENCRYPT);
+		for (int j = 0; j < 8; j++)
+			Ciphertext.push_back(outputText[j]);
+	}
+
+	if (cleartext.length() % 8 != 0) {
+		int tmp1 = cleartext.length() / 8 * 8;
+		int tmp2 = cleartext.length() - tmp1;
+		memset(inputText, 0, 8);
+		memcpy(inputText, cleartext.toLatin1().data() + tmp1, tmp2);
+
+		DES_ecb_encrypt(&inputText, &outputText, &keySchedule, DES_ENCRYPT);
+
+		for (int j = 0; j < 8; j++)
+			Ciphertext.push_back(outputText[j]);
+	}
+
+	ciphertext.clear();
+	ciphertext = QString::fromLatin1(Ciphertext.c_str(), Ciphertext.length());
+
+	return ENCRYPT_SUCCESS;
+}
+```
+
 ### 接口介绍
 
 #### DES_cblock别名
@@ -165,7 +215,7 @@ ciphertext = QString::fromLatin1(Ciphertext.c_str(), Ciphertext.length());
 **[ECB加密代码](https://github.com/cheng668/QT-SQLiteStudio/blob/master/ecbcipher.cpp)** 
 
 解密过程和加密类似，这里不再累赘，但要注意以下一点：
-* 当调用`QString::fromLatin1()`从string密文向明文QString转换时，第二个参数不要填，原因是解密后得到的明文以每8字节保存在`Ciphertext`(假设是`Ciphertext`,也可以为`Cleartext`,自定义)中，不足8字节的会用'\0'补齐，如果这时用
+* 当调用`QString::fromLatin1()`从string密文向明文QString转换时，第二个参数不要填，原因是解密后得到的明文以每8字节保存在`Ciphertext`(假设是`Ciphertext`,也可以为`Cleartext`,自定义)中，不足8字节的会用`\0`补齐，如果这时用
 
 ```c
 	ciphertext = QString::fromLatin1(Ciphertext.c_str(), Ciphertext.length());
