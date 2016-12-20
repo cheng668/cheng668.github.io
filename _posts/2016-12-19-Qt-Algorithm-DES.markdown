@@ -160,8 +160,9 @@ ciphertext = QString::fromLatin1(Ciphertext.c_str(), Ciphertext.length());
 这里还要注意string的转化过程中，QString会识别`\0`空字符，当解密后字符串中（如`Ciphertext[2] = '\0'`）那么转换为QString就会只剩下`Ciphertext[0]`和`Ciphertext[1]`了，显然是不符合的。
 所以`QString::fromLatin1`中第二个参数必须指定为`Ciphertext`的长度。
 
-### 五、完整加密代码
+### 五、完整加密解密代码
 
 **[ECB加密代码](https://github.com/cheng668/QT-SQLiteStudio/blob/master/ecbcipher.cpp)** 
 
-解密过程类似，这里不再累赘,谢谢点评！
+解密过程和加密类似，这里不再累赘，但要注意以下一点：
+* 当调用`QString::fromLatin1()`从string密文向明文QString转换时，第二个参数不要填，至于原因，给读者一个小小的思考空间！！！（答案见）**[ECB加密代码](https://github.com/cheng668/QT-SQLiteStudio/blob/master/ecbcipher.cpp)** 
