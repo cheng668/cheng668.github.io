@@ -204,7 +204,7 @@ if (cleartext.length() % 8 != 0) {
 
 ```c
  static inline QString fromLatin1(const char *str, int size = -1)
-···
+```
 
 函数会先创建size个位置（如果size不填，则取char数组长度），然后把char数组逐个字节转变为uchar存储在QString的相应位置，即会把129（无符号）或者-127（有符号）都作为无符号的129。
 
