@@ -198,9 +198,15 @@ if (cleartext.length() % 8 != 0) {
 
 将密文保存在`Ciphertext`内后，要注意从string转换为QString，string解码后存放的字符不一定是原来的Ascii编码字符，用`QString::fromStdString()`函数转换时先判断每个字节是否大于127，如果不大于，就按Ascii逐字节存进QString的字节中，如果大于127，则按照UTF8转换为Unicode编码，但问题会出在UTF8转换为Unicode编码过程中，`QString::fromStdString()`内部会检查编码规则，则当一个字节为196（`1100 0100`）时，代码会认为这个UTF8编码的是双字节字符，但实际传进去的是整个string的长度，显然不符合UTF8编码规则，所以会返回`QChar::ReplacementCharacter`即`0xfffd`，简单来说：
 
-原本`outputText`中第一个字符的2进制数为`10000001`,即129，对于这个大于127的字符，`QString::fromStdString()`函数会因为UTF8编码转Unicode编码失败而翻译成65533，这样就出错了。
+假设`outputText`中第一个字符的2进制数为`10000001`,即129，对于这个大于127的字符，`QString::fromStdString()`函数会因为UTF8编码转Unicode编码失败而翻译成65533，这样就出错了。
 
-所以这里应该用`QString::fromLatin1()`函数进行转换，这时会把129（无符号）或者-127（有符号）都作为无符号的129，即：
+所以这里应该用`QString::fromLatin1()`函数进行转换，
+
+```c
+ static inline QString fromLatin1(const char *str, int size = -1)
+···
+
+函数会先创建size个位置（如果size不填，则取char数组长度），然后把char数组逐个字节转变为uchar存储在QString的相应位置，即会把129（无符号）或者-127（有符号）都作为无符号的129。
 
 对于编码规则如有不懂，请**[点我进入WIKI](https://en.wikipedia.org/wiki/UTF-8)** 或者**[百度百科](http://baike.baidu.com/link?url=cq7K5TZZ_s0bp9YohoJ14e-QVzTL06fa-AUHSLxpx4x2EpoYJUIWk9JgYJEhbAkcQMyZBVyuh9Qz9y4LsQKB_K)**
 
