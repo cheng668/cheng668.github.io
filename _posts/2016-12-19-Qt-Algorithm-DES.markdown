@@ -223,6 +223,7 @@ ciphertext = QString::fromLatin1(Ciphertext.c_str(), Ciphertext.length());
 **[ECB加密代码](https://github.com/cheng668/QT-SQLiteStudio/blob/master/ecbcipher.cpp)** 
 
 解密过程和加密类似，这里不再累赘，但要注意以下一点：
+
 * 当调用`QString::fromLatin1()`从string密文向明文QString转换时，第二个参数不要填，原因是解密后得到的明文以每8字节保存在`Ciphertext`(假设是`Ciphertext`,也可以为`Cleartext`,自定义)中，不足8字节的会用`\0`补齐，如果这时用
 
 ```c
