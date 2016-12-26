@@ -14,7 +14,7 @@ tags: Pattern
 
 
 
-这里先贴命令模式通用UML类图，稍后再贴C++代码实现UNL类图
+这里先贴命令模式通用UML类图，稍后再贴C++代码实现UML类图
 ![](https://raw.githubusercontent.com/cheng668/image/master/%E5%91%BD%E4%BB%A4%E6%A8%A1%E5%BC%8F.png)
 
 ### 一.意图：
@@ -31,7 +31,7 @@ tags: Pattern
 
 ### 三.参与者：
 
-这里提供下待实现的UNL类图，本类图的c++实现代码放在博主github上，文章最后会提供链接。
+这里提供下待实现的UML类图，本类图的c++实现代码放在博主github上，文章最后会提供链接。
 
 ![](https://raw.githubusercontent.com/cheng668/image/master/%E5%91%BD%E4%BB%A4%E6%A8%A1%E5%BC%8F2.png)
 
@@ -84,7 +84,7 @@ tags: Pattern
 
 * Composite模式：实现命令组合
 * Memento模式：保存状态参数，用于取消操作
-。Prototyte模式：放进历史列表前必须被拷贝的命令
+* Prototyte模式：放进历史列表前必须被拷贝的命令
 
 ### 九.代码：
 
