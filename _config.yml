@@ -7,7 +7,7 @@
 
 # Site settings
 title: Cheng
-brief-intro: C++ Engineer
+brief-intro: C++ Engineer / Geek
 baseurl: "" # the subpath of your site, e.g. /blog
 url: "https://cheng668.github.io" # the base hostname & protocol for your site
 
@@ -19,7 +19,7 @@ email: 414866271@qq.com
 zhihu_username: 斌斌
 dribbble_username:
 
-description_footer: 本站记录我学习技术的沿途风景！
+description_footer: To be a Geek ！
 
 # comments
 # two ways to comment, only choose one, and use your own short name
