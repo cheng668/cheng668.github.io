@@ -62,7 +62,7 @@ tags: Pattern
 
 * Creator类不实现工厂方法接口，这样Creator不可实例化；也可缺省，这样Creator的子类作为补充。
 * 可以参数化工厂方法，工厂根据产品ID生产产品。
-* 注意 Creator类构造函数中不能调用工厂函数，工厂函数可以用 Lazy initialization。
+* 注意 Creator类构造函数中不能调用工厂函数，工厂函数可以用 Lazy initialization(《More Effective C++》item M17)。
 * 工厂子类可用模板创建
 * 命名约定，让客户知道是工厂还是产品。
 
