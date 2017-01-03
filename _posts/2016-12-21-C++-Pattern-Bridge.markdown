@@ -76,4 +76,4 @@ excerpt: C++设计模式之桥连模式
 
 ### 九.代码：
 
-**[建造者模式源码例子 🇨🇳](https://github.com/cheng668/Pattern-Bridge)**
+**[桥接模式源码例子 🇨🇳](https://github.com/cheng668/Pattern-Bridge)**

@@ -87,4 +87,4 @@ tags: Pattern
 
 ### 九.代码：
 
-**[建造者模式源码例子 🇨🇳](https://github.com/cheng668/Pattern-Visitor)**
+**[访问者模式源码例子 🇨🇳](https://github.com/cheng668/Pattern-Visitor)**

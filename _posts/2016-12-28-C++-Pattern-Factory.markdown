@@ -78,4 +78,4 @@ tags: Pattern
 
 ### 九.代码：
 
-**[建造者模式源码例子 🇨🇳](https://github.com/cheng668/Pattern-Factory.git)**
+**[工厂模式源码例子 🇨🇳](https://github.com/cheng668/Pattern-Factory.git)**

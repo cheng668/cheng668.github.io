@@ -79,4 +79,4 @@ tags: Pattern
 
 ### 九.代码：
 
-**[建造者模式源码例子 🇨🇳](https://github.com/cheng668/Pattern-Iterator)**
+**[迭代器模式源码例子 🇨🇳](https://github.com/cheng668/Pattern-Iterator)**

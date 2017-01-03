@@ -79,4 +79,4 @@ excerpt: C++设计模式之组合模式
 
 ### 九.源码例子：
 
-**[修饰模式源码例子 🇨🇳](https://github.com/cheng668/Pattern-Composite)**
+**[组合模式源码例子 🇨🇳](https://github.com/cheng668/Pattern-Composite)**
