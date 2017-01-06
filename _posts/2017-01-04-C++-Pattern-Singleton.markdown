@@ -59,6 +59,7 @@ tags: Pattern
 ![](https://raw.githubusercontent.com/cheng668/image/master/%E5%8D%95%E4%BE%8B%E6%A8%A1%E5%BC%8F2.png)
 
 这里实现了两种单例模式：
+
 * 一种是多例模式(特殊单例模式)，其中包括用于计数的模板 Counted<>类和用于生成实例的 Printer类；
 
 Counted类：
